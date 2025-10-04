@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: slips-backend
+    env: node
+    rootDir: backend
+    plan: free   # or starter/standard if you want more resources
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: SPORTS_API_KEY
+        sync: false
+      - key: MLB_API_KEY
+        sync: false
+      - key: NBA_API_KEY
+        sync: false
+      - key: TODAY_RULE
+        value: "true"
